@@ -1,0 +1,61 @@
+<!-- http://www.tuicool.com/articles/2uqqIf -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>插入排序</title>    
+    <script src="jquery-3.1.1.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="dom.css">
+  </head>
+  <body>
+    <div id="dom"></div>
+
+    <script src="dom.js"></script>
+<script type="text/javascript">
+
+// 插入排序 从下标1开始每增1项排序一次，越往后遍历次数越多
+function  insertSort(arr) { 
+　for(var i=0;i<arr.length;i++){
+    var next = arr[i+1]
+    var insertIndex = -1
+    for(var j=0;j<=i;j++){
+      if(next < arr[j]){        
+        insertIndex = j
+        break
+      }
+    }
+    if(insertIndex != -1){      
+      arr.splice(i+1,1)
+      arr.splice(insertIndex,0,next)
+    }    
+  }
+  return arr
+}
+
+// 插入排序 二分插入
+function  insertSort_1(arr) { 
+　for (var i = 0; i < arr.length-1; i++) {
+    var key = arr[i+1], left = 0, right = i
+    while (left <= right) {
+      var middle = parseInt((left + right) / 2)
+      if (key < arr[middle]) {
+        right = middle - 1
+      } else {
+        left = middle + 1
+      }
+    }
+
+    arr.splice(i+1,1)
+    arr.splice(left,0,key)
+  }
+  return arr;
+}
+ 
+console.log(insertSort_1([4,8,1,6,9,22,15,7,29]))
+//event.go()
+
+</script>
+
+  </body>
+</html>

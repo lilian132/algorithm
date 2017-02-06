@@ -1,0 +1,63 @@
+<!-- http://www.tuicool.com/articles/2uqqIf -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>冒泡排序</title>    
+    <script src="jquery-3.1.1.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="dom.css">
+  </head>
+  <body>
+    <div id="dom"></div>
+
+    <script src="dom.js"></script>
+<script type="text/javascript">
+
+// 1.冒泡排序
+// 解析：1.比较相邻的两个元素，如果前一个比后一个大，则交换位置。
+// 　　　2.第一轮结束的时候最后一个元素应该是最大的一个。
+// 　　　3.按照步骤一的方法进行相邻两个元素的比较，这个时候由于最后一个元素已经是最大的了，所以最后一个元素不用比较。
+function MPsrot(arr){
+	for(var i=0;i<arr.length-1;i++){
+		for(var j=0;j<arr.length-i-1;j++){
+			if(arr[j] > arr[j+1]){
+				var a = arr[j]
+				arr[j] = arr[j+1]
+				arr[j+1] = a
+			}
+            
+            event.push(arr,[j,j+1]) 
+		}
+	}
+}
+
+//优化版
+// 如果在某次的排序中没有出现交换的情况，
+// 那么说明在无序的元素现在已经是有序了，就可以直接返回了。
+function MPsrot_1(arr){
+    var exchange
+    for(var i=0;i<arr.length-1;i++){
+        exchange = 0
+        for(var j=0;j<arr.length-i-1;j++){
+            if(arr[j] > arr[j+1]){
+                var a = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = a
+                exchange = 1
+            }
+            
+            event.push(arr,[j,j+1])
+        }
+
+        if (exchange == 0) return;
+    }
+}
+
+MPsrot_1(arr)
+event.go()
+
+</script>
+
+  </body>
+</html>
